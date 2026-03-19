@@ -15,9 +15,45 @@
 
 ## 설치
 
-1. Claude Code 플러그인 디렉토리에 복사
-2. Claude Code 설정에서 플러그인 활성화
-3. Claude Code 재시작
+### 방법 1: 마켓플레이스 (추천)
+
+```bash
+# Claude Code에서 실행
+/plugin marketplace add choiho8621/set-tools
+```
+
+### 방법 2: 로컬 심볼릭 링크
+
+```bash
+# 플러그인 디렉토리로 이동
+cd /path/to/set-tools
+
+# 설치 스크립트 실행
+npm run link-plugin
+
+# 또는 직접 실행
+bash scripts/link.sh
+```
+
+### 방법 3: 수동 복사
+
+```bash
+# Claude Code 플러그인 디렉토리에 복사
+cp -r /path/to/set-tools ~/.claude/plugins/set-tools
+
+# Claude Code 재시작
+```
+
+### 설치 확인
+
+```bash
+# Claude Code에서 다음 커맨드 사용 가능 확인
+/project-init
+/spec-create
+/quality-check
+/trust-validate
+/adr-create
+```
 
 ## 플러그인 구조
 
