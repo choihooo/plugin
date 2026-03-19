@@ -9,8 +9,8 @@
   "license": "MIT",
   "keywords": ["automation", "productivity", "code-quality", "testing", "documentation"],
   "commands": "./commands",
-  "agents": "./agents",
-  "skills": "./skills",
+  "agents": ["./agents"],
+  "skills": ["./skills"],
   "hooks": "./hooks/hooks.json",
   "mcpServers": "./.mcp.json"
 }
