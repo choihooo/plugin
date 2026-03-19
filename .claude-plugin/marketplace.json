@@ -1,0 +1,47 @@
+{
+  "name": "set-tools",
+  "owner": {
+    "name": "Choi Ho",
+    "email": "hochoi8621@gmail.com"
+  },
+  "metadata": {
+    "description": "개인용 개발 자동화 및 생산성 도구 키트 - SPEC, ADR, TRUST 5 품질 관리 시스템",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "set-tools",
+      "source": "./",
+      "description": "개인용 개발 자동화 및 생산성 도구 키트",
+      "version": "1.0.0",
+      "author": {
+        "name": "Choi Ho",
+        "email": "hochoi8621@gmail.com"
+      },
+      "homepage": "https://github.com/choiho8621/set-tools",
+      "repository": "https://github.com/choiho8621/set-tools",
+      "license": "MIT",
+      "keywords": [
+        "automation",
+        "productivity",
+        "spec",
+        "adr",
+        "quality-gate",
+        "trust-5",
+        "ears",
+        "conventional-commits",
+        "lsp",
+        "development-tools"
+      ],
+      "category": "development",
+      "tags": [
+        "spec-management",
+        "architecture-decisions",
+        "quality-gates",
+        "documentation",
+        "testing",
+        "code-quality"
+      ]
+    }
+  ]
+}

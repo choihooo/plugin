@@ -1,0 +1,37 @@
+{
+  "name": "@choiho8621/set-tools",
+  "version": "1.0.0",
+  "description": "개인용 개발 자동화 및 생산성 도구 키트",
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "automation",
+    "quality-gate",
+    "spec",
+    "adr"
+  ],
+  "author": {
+    "name": "Choi Ho",
+    "email": "hochoi8621@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/choiho8621/set-tools"
+  },
+  "files": [
+    ".claude-plugin/**/*",
+    "commands/**/*",
+    "skills/**/*",
+    "agents/**/*",
+    "hooks/**/*",
+    "scripts/**/*",
+    "*.md",
+    "*.yaml",
+    "*.json"
+  ],
+  "scripts": {
+    "install-plugin": "bash scripts/install.sh",
+    "link-plugin": "bash scripts/link.sh"
+  }
+}

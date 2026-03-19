@@ -1,0 +1,272 @@
+# TRUST 5 Quality Configuration
+# MoAI 기반 품질 관리 설정 파일
+
+version: 1.0.0
+
+# Tested 설정 (테스트 완료)
+tested:
+  # 최소 커버리지 (퍼센트)
+  min_coverage: 85
+  # 실패 기준 (퍼센트)
+  fail_below: 70
+  # 지원하는 테스트 프레임워크
+  frameworks:
+    - jest
+    - vitest
+    - pytest
+    - go test
+  # 커버리지 리포트 형식
+  coverage_format:
+    - text
+    - json
+    - html
+
+# Readable 설정 (가독성)
+readable:
+  # Linter 도구
+  linters:
+    javascript:
+      - eslint
+      - typescript-eslint
+    python:
+      - ruff
+      - flake8
+      - pylint
+    go:
+      - golint
+      - golangci-lint
+  # 최대 복잡도 (McCabe)
+  max_complexity: 10
+  # 최대 함수 길이 (라인)
+  max_function_length: 50
+  # 최대 파일 길이 (라인)
+  max_file_length: 300
+
+# Unified 설정 (통일성)
+unified:
+  # 코드 포매터
+  formatters:
+    javascript:
+      - prettier
+      - eslint --fix
+    python:
+      - ruff format
+      - black
+    go:
+      - gofmt
+  # 최대 라인 길이
+  line_length: 100
+  # 들여쓰기 스타일
+  indent_style: spaces
+  indent_size: 2
+  # 임포트 정렬
+  sort_imports: true
+
+# Secured 설정 (보안)
+secured:
+  # 보안 감사 도구
+  auditors:
+    javascript:
+      - npm audit
+      - yarn audit
+      - snyk test
+    python:
+      - safety check
+      - pip-audit
+      - bandit
+    go:
+      - go vulncheck
+  # 무시할 취약점 레벨
+  ignore_vulnerabilities:
+    - low
+  # 허용할 취약점 (특정 CVE)
+  allow_list: []
+  # 시크릿 스캔
+  secrets_scan:
+    enabled: true
+    patterns:
+      - /api[_-]?key/i
+      - /secret/i
+      - /password/i
+      - /token/i
+      - /aws[_-]?(access[_-]?key|secret[_-]?key)/i
+
+# Trackable 설정 (추적 가능성)
+trackable:
+  # 커밋 메시지 형식
+  commit_format: conventional
+  # Conventional Commits 타입
+  commit_types:
+    - feat      # 새로운 기능
+    - fix       # 버그 수정
+    - docs      # 문서 변경
+    - style     # 코드 스타일 변경 (로직 변경 없음)
+    - refactor  # 코드 리팩토링
+    - test      # 테스트 추가/수정
+    - chore     # 빌드/프로세스/도구 변경
+    - perf      # 성능 개선
+    - ci        # CI 설정 변경
+    - build     # 빌드 시스템 변경
+    - revert    # 이전 커밋 되돌리기
+  # CHANGELOG 요구여부
+  changelog_required: true
+  # 이슈 참조 요구여부
+  issue_reference_required: false
+  # PR 템플릿 요구여부
+  pr_template_required: false
+
+# LSP 품질 게이트 설정
+lsp_gates:
+  # Plan 단계 (계획)
+  plan:
+    # 기준선 캡처
+    capture_baseline: true
+    # 기준선 저장 파일
+    baseline_file: .trust-baseline.json
+
+  # Run 단계 (실행)
+  run:
+    # 허용 가능한 새 에러 수
+    max_new_errors: 0
+    # 타입 에러 허용 여부
+    allow_type_errors: false
+    # 경고 증가 허용 수
+    max_new_warnings: 5
+
+  # Sync 단계 (동기화)
+  sync:
+    # 최대 에러 수
+    max_errors: 0
+    # 최대 경고 수
+    max_warnings: 10
+    # 타입 에러 허용 여부
+    allow_type_errors: false
+
+# 자동 수정 설정
+auto_fix:
+  # 포맷팅 자동 수정
+  format: true
+  # Lint 자동 수정
+  lint_fix: true
+  # 보안 취약점 자동 수정 (주의: 위험할 수 있음)
+  security_fix: false
+  # 가져오기 정렬 자동 수정
+  import_sort: true
+
+# 프로젝트별 예외 설정
+exceptions:
+  # 특정 파일/디렉토리 무시
+  ignore_files:
+    - node_modules/
+    - dist/
+    - build/
+    - coverage/
+    - .next/
+    - target/
+    - __pycache__/
+    - *.min.js
+    - *.bundle.js
+
+  # 특정 규칙 예외
+  ignore_rules:
+    - file: "src/legacy/*"
+      rules: ["complexity", "max-line-length"]
+    - file: "*.test.ts"
+      rules: ["max-function-length"]
+
+# 팀 표준 설정 (선택사항)
+team_standards:
+  # 코드 리뷰 정책
+  code_review:
+    required: true
+    min_reviewers: 1
+    # 자가 승인 가능 여부
+    self_approval_allowed: false
+
+  # PR 정책
+  pull_request:
+    required: true
+    # PR 템플릿
+    template: .github/PULL_REQUEST_TEMPLATE.md
+    # PR 제목 형식
+    title_format: "conventional"
+
+# CI/CD 통합
+ci_integration:
+  # PR 생성 시 자동 검증
+  on_pr: true
+  # 푸시 시 자동 검증
+  on_push: false
+  # 브랜치 보호 규칙
+  branch_protection:
+    main:
+      require_status_checks: true
+      required_checks:
+        - "TRUST 5 Quality Gate"
+        - "Tests"
+        - "Lint"
+
+# 보고서 설정
+reporting:
+  # 리포트 형식
+  formats:
+    - console
+    - json
+    - html
+  # 리포트 저장 경로
+  output_dir: .trust-reports
+  # 히스토리 보관
+  keep_history: true
+  # 최대 히스토리 보관 수
+  max_history: 100
+
+# 성능 설정
+performance:
+  # 병렬 처리
+  parallel: true
+  # 최대 병렬 작업 수
+  max_parallel: 4
+  # 캐시 사용
+  cache: true
+  # 캐시 디렉토리
+  cache_dir: .trust-cache
+
+# 알림 설정
+notifications:
+  # 실패 시 알림
+  on_fail:
+    - console
+    # - slack  # 설정 필요
+    # - email # 설정 필요
+  # 경고 시 알림
+  on_warn:
+    - console
+  # 성공 시 알림
+  on_success:
+    - console
+
+# 언어별 특정 설정
+language_overrides:
+  typescript:
+    # TypeScript strict 모드
+    strict_mode: true
+    # noImplicitAny
+    no_implicit_any: true
+    # 타입 커버리지
+    type_coverage: 90
+
+  python:
+    # 타입 힌팅 강제
+    type_checking: true
+    # mypy 사용
+    use_mypy: true
+    # Python 버전
+    target_version: "3.10"
+
+  go:
+    # go vet 사용
+    use_vet: true
+    # staticcheck 사용
+    use_staticcheck: true
+    # Go 버전
+    target_version: "1.21"

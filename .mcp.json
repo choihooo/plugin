@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "example-server": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/servers/example-server.js"],
+      "env": {
+        "SERVER_PORT": "3000",
+        "LOG_LEVEL": "info"
+      }
+    }
+  }
+}
