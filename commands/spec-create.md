@@ -107,4 +107,27 @@ After creating the SPEC:
 
 ---
 
+## ⚠️ 필수: 실제 파일 생성
+
+사용자 입력을 받은 후 **반드시 Write 도구로 실제 파일들을 생성**해야 합니다.
+
+### 실행 단계:
+1. `mkdir -p docs/specs/{feature-name}` 디렉토리 생성
+2. Write 도구로 생성:
+   - `spec.md`: EARS 형식 요구사항 (5-10개)
+   - `plan.md`: 구현 계획 (5-10 tasks)
+   - `acceptance.md`: Given/When/Then 시나리오 (3-5개)
+   - `CHANGELOG.md`: v0.1.0 - DRAFT
+
+### ❌ 절대 하지 말아야 할 것:
+- "템플릿이 준비되었습니다"
+- "파일 구조가 생성되었습니다"
+
+### ✅ 항상 해야 할 것:
+- **실제로 4개 파일 모두 Write 도구로 생성**
+- 실제 내용 채워서 생성 (빈 템플릿 NO)
+- 생성 경로와 파일 개수 명시
+
+---
+
 **Tip**: Use natural language when writing requirements. The EARS format helps structure them clearly.

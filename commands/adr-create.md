@@ -78,4 +78,27 @@ The generated file includes:
 
 ---
 
+## ⚠️ 필수: 실제 파일 생성
+
+ADR 제목을 받은 후 **반드시 Write 도구로 실제 ADR 파일을 생성**해야 합니다.
+
+### 실행 단계:
+1. `mkdir -p docs/ADR` 디렉토리 생성
+2. 기존 ADR 스캔하여 다음 번호 계산 (e.g., ADR-006)
+3. Write 도구로 `ADR-{number}-{slug}.md` 생성
+   - Status: Proposed
+   - Date: 오늘 날짜
+   - 모든 섹션 헤더 포함
+
+### ❌ 절대 하지 말아야 할 것:
+- "ADR 템플릿이 준비되었습니다"
+- "파일 구조가 생성되었습니다"
+
+### ✅ 항상 해야 할 것:
+- **실제로 ADR 파일 Write 도구로 생성**
+- 올바른 순차적 번호 부여
+- 생성된 파일 경로 명시
+
+---
+
 **Tip**: Use the ADR Generator skill for help thinking through decisions. This command just creates the file structure - the skill helps with the actual decision-making process.

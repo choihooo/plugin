@@ -165,4 +165,24 @@ Recommendation: Requirements appear stable. Safe to implement.
 
 ---
 
+## ⚠️ 필수: 실제 파일 읽기 및 비교
+
+**실제로 CHANGELOG.md 파일을 읽고** **실제 버전 차이를 표시**해야 합니다.
+
+### 실행 단계:
+1. Bash 도구로 `find docs/specs -name "CHANGELOG.md"`
+2. Read 도구로 CHANGELOG.md 읽기
+3. 실제 버전 히스토리, 변경사항 비교
+
+### ❌ 절대 하지 말아야 할 것:
+- 예제 diff 데이터 표시
+- "변경 추적 형식입니다"
+
+### ✅ 항상 해야 할 것:
+- **실제로 Read 도구로 CHANGELOG.md 읽기**
+- **실제 버전 히스토리 표시**
+- CHANGELOG 없으면 "No change history found"
+
+---
+
 **Tip**: Use `/spec-diff` before starting implementation to ensure requirements won't change mid-development.

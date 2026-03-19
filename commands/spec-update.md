@@ -136,4 +136,27 @@ CHANGELOG updated:
 
 ---
 
+## ⚠️ 필수: 실제 파일 수정
+
+변경 내용을 받은 후 **반드시 Edit 도구로 실제 파일들을 수정**해야 합니다.
+
+### 실행 단계:
+1. Read 도구로 현재 파일 내용 확인
+2. Edit 도구로 실제 수정:
+   - 대상 파일 (spec.md/plan.md/acceptance.md)
+   - CHANGELOG.md 새 항목 추가
+   - 버전 번호 업데이트
+3. 변경 내용, 버전, 영향도 명시
+
+### ❌ 절대 하지 말아야 할 것:
+- "CHANGELOG가 준비되었습니다"
+- "변경 사항이 기록되었습니다"
+
+### ✅ 항상 해야 할 것:
+- **실제로 Edit 도구로 파일 수정**
+- **실제로 CHANGELOG.md에 항목 추가**
+- 구체적인 변경 내용 명시
+
+---
+
 **Important**: Always update CHANGELOG when modifying specs. This creates an audit trail for decision evolution.

@@ -212,4 +212,24 @@ Action items:
 
 ---
 
+## ⚠️ 필수: 실제 스캔 및 표시
+
+**실제로 docs/specs/ 디렉토리를 스캔**하고 **실제 정보를 표시**해야 합니다.
+
+### 실행 단계:
+1. Bash 도구로 `find docs/specs -name "spec.md"`
+2. Read 도구로 각 spec.md 읽기
+3. 실제 데이터로 포맷된 출력
+
+### ❌ 절대 하지 말아야 할 것:
+- 예제/플레이스홀더 데이터 표시
+- "출력 형식 템플릿입니다"
+
+### ✅ 항상 해야 할 것:
+- **실제로 Bash/Read 도구로 스캔**
+- **실제 spec 데이터 표시**
+- SPEC 없으면 "No specs found. Use /spec-create"
+
+---
+
 **Tip**: Use `/spec-list` daily to track project progress and identify blocked specs.

@@ -64,4 +64,24 @@ You can filter by status:
 
 ---
 
+## ⚠️ 필수: 실제 스캔 및 표시
+
+**실제로 docs/ADR/ 디렉토리를 스캔**하고 **실제 정보를 표시**해야 합니다.
+
+### 실행 단계:
+1. Bash 도구로 `find docs/ADR -name "ADR-*.md"`
+2. Read 도구로 각 ADR 파일 읽기
+3. 실제 데이터로 포맷된 출력
+
+### ❌ 절대 하지 말아야 할 것:
+- 예제/플레이스홀더 데이터 표시
+- "ADR 목록 형식입니다"
+
+### ✅ 항상 해야 할 것:
+- **실제로 Bash/Read 도구로 스캔**
+- **실제 ADR 데이터 표시**
+- ADR 없으면 "No ADRs found. Use /adr-create"
+
+---
+
 **Note**: If no ADRs exist yet, use `/adr-create` to create your first one.
