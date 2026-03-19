@@ -1,16 +1,3 @@
 {
-  "name": "set-tools",
-  "version": "1.0.0",
-  "description": "Personal automation and productivity toolkit for development workflows",
-  "author": {
-    "name": "Choi Ho",
-    "email": "hochoi8621@gmail.com"
-  },
-  "license": "MIT",
-  "keywords": ["automation", "productivity", "code-quality", "testing", "documentation"],
-  "commands": "./commands",
-  "agents": ["./agents"],
-  "skills": ["./skills"],
-  "hooks": "./hooks/hooks.json",
-  "mcpServers": "./.mcp.json"
+  "name": "set-tools"
 }
